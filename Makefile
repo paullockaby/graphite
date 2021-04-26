@@ -22,11 +22,6 @@ push: build
 	@echo "pushing $(IMAGE_ID)"
 	docker push $(IMAGE_ID)
 
-.PHONY: run
-run: build
-	@echo "running $(IMAGE_NAME):latest"
-	docker run --rm -it -p 8080:8080/tcp -v $(PWD)/example:/opt/graphite/conf -v $(PWD)/storage:/opt/graphite/storage $(IMAGE_NAME):latest
-
 .PHONY: clean
 clean:
 	@echo "removing built image ${IMAGE_ID}"
