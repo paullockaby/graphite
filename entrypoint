@@ -5,7 +5,7 @@ export PYTHONPATH=/opt/graphite/webapp
 export DJANGO_SETTINGS_MODULE=graphite.settings
 
 # activate the virtual environment
-source /opt/graphite/bin/activate
+. /opt/graphite/bin/activate
 
 # configure django and set up default databases
 /opt/graphite/bin/django-admin makemigrations
