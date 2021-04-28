@@ -7,7 +7,7 @@ FROM base AS builder
 
 # packages needed for building this thing
 RUN apt-get -q update && \
-    apt-get install -y --no-install-recommends curl ca-certificates libcairo2 && \
+    apt-get install -y --no-install-recommends curl ca-certificates libcairo2 gcc libpq-dev python-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install python dependencies
@@ -33,7 +33,7 @@ FROM base AS final
 # packages needed to run this thing
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && \
-    apt-get install -y --no-install-recommends tini libcairo2 && \
+    apt-get install -y --no-install-recommends tini libcairo2 libpq5 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # copy the virtual environment that we just built
