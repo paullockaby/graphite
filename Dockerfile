@@ -1,4 +1,4 @@
-FROM python:3.9.5-slim-buster@sha256:80b238ba357d98813bcc425f505dfa238f49cf5f895492fc2667af118dccaa44 AS base
+FROM python:3.9.6-slim-buster@sha256:8ffb28a4fca06fc0914dac67e801cf447df0225ea23ee1b42685de02f2555235 AS base
 
 # github metadata
 LABEL org.opencontainers.image.source=https://github.com/paullockaby/graphite
