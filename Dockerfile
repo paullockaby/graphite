@@ -44,13 +44,13 @@ RUN apt-get -q update && \
 # copy the virtual environment that we just built
 COPY --from=builder /opt /opt
 
-## set up custom scripts for setting up django
+# set up custom scripts for setting up django
 RUN cd /opt/graphite/webapp/graphite && ln -s /opt/graphite/conf/local_settings.py
 COPY customauth.py /opt/graphite/webapp/graphite/customauth.py
 
-# this creates a new blank user
-COPY django_admin_init.exp /opt/graphite/bin
-RUN chmod +x /opt/graphite/bin/django_admin_init.exp
+# this initializes the database
+COPY initialization /initialization
+RUN chmod +x /initialization
 
 # install the entrypoint last to help with caching
 COPY entrypoint /
