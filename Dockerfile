@@ -13,7 +13,7 @@ FROM base AS builder
 
 # packages needed for building this thing
 RUN apt-get -q update && \
-    apt-get install -y --no-install-recommends curl ca-certificates libcairo2 gcc libpq-dev python-dev && \
+    apt-get install -y --no-install-recommends curl ca-certificates && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install python dependencies
