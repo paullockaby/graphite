@@ -1,5 +1,5 @@
 # pinned dependencies
-Django<3
+Django<5
 pyparsing<3
 
 # direct dependencies
