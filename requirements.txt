@@ -10,7 +10,7 @@ gevent==21.12.0
 gunicorn==20.1.0
 pytz==2021.3
 six==1.16.0
-urllib3==1.26.8
+urllib3==1.26.9
 
 # transitive dependencies
 cffi==1.15.0
